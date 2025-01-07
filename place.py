@@ -1,8 +1,8 @@
 class Place():
-    def __init__(self, given_name, given_size, locked=False):
+    def __init__(self, given_name, place_id, locked=False):
         # locked=False means that the locked parameter will be False by default if not provided.
         self.name = given_name
-        self.size = given_size
+        self.id = place_id
         self.locked = locked
         self.next_places = []
         self.items = []
@@ -12,7 +12,7 @@ class Place():
         self.next_places.append(place_instance)
 
     def add_item(self, item_instance):
-        # add code here
+        self.items.append(item_instance)
         pass
 
     def show_next_places(self):

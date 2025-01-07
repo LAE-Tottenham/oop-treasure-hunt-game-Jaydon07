@@ -8,8 +8,10 @@ class Player():
         # add more atributes as needed
 
     def calculate_inventory_size(self):
-        # write code here
-        pass
+        inventory_size = 0
+        for i in range(len(self.inventory)):
+            inventory_size += 1
+        return inventory_size
 
     def add_item(self, item_instance):
         if self.calculate_inventory_size() > self.inventory_max_weight:
