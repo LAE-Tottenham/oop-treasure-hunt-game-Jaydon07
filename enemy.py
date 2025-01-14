@@ -1,22 +1,25 @@
 class Enemy():
-    def __init__(self, enemy_class):
-        self.name = enemy_class
-        self.health = 100
+    def __init__(self, name, health, damage, item, weakness):
+        self.name = name
+        self.health = health
+        self.damage = damage
+        self.item = item
+        self.weakness = weakness
+    
+    def add_item(self, item_instance):
+        self.item.append(item_instance)
+        pass
 
-    def punch(self, player, dodge)
-        if player,
+    def remove_item(self, item_instance):
+        self.item.remove(item_instance)
+        pass
 
-    def attack(self):
-        if self.calculate_inventory_size() > self.inventory_max_weight:
-            self.inventory.append(item_instance)
-        else:
-            print("Your inventory is full...")
+    def attack(self, player):
+        player.health -= self.damage
+        print(f"{self.name} inflicted {self.damage} of damage to {player.name}!")
 
-    def use_item(self, item_instance):
-        if item_instance.type == "food":
-            self.energy += 50
-        elif item_instance.type == "medicine":
-            self.health += 50
-        # add more code here
-
-    # add more methods as needed
+    def death(self, player):
+        print(f"{self.name} successfully defeated!")
+        player.inventory.append(self.item)
+        print(f"{self.name} has dropped for you you: {self.item.name}!")
+        #self.remove_item(self.item)
